@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircleProgressView="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.pratiksymz.android.courtcounter.StopwatchFragment"
+    android:background="@drawable/gradient_drawable">
+
+    <at.grabner.circleprogress.CircleProgressView
+        android:id="@+id/circle_progress_view"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        CircleProgressView:cpv_autoTextSize="true"
+        CircleProgressView:cpv_barWidth="10dp"
+        CircleProgressView:cpv_textColor="@color/white"
+        CircleProgressView:cpv_contourSize="1dp"
+        CircleProgressView:cpv_maxValue="59"
+        CircleProgressView:cpv_rimWidth="7dp"
+        CircleProgressView:cpv_seekMode="true"
+        CircleProgressView:cpv_showUnit="true"
+        CircleProgressView:cpv_textScale="1"
+        CircleProgressView:cpv_unit="sec"
+        CircleProgressView:cpv_unitPosition="right_top"
+        CircleProgressView:cpv_rimColor="@color/colorAccent"
+        CircleProgressView:cpv_unitScale="1"
+        CircleProgressView:cpv_value="0"
+        CircleProgressView:cpv_barColor="@color/white"
+        CircleProgressView:cpv_showTextInSpinningMode="true"
+        app:elevation="5dp"/>
+
+    <Chronometer
+        android:id="@+id/stopwatch_chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:typeface="serif"
+        android:textSize="40dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/button_start"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_play_arrow_white_36dp"
+            app:cb_color="@color/colorPrimary"
+            app:cb_pressedRingWidth="8dp"
+            app:elevation="10dp" />
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/button_stop"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_stop_white_36dp"
+            app:cb_color="@color/colorPrimary"
+            app:cb_pressedRingWidth="8dp"
+            app:elevation="10dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

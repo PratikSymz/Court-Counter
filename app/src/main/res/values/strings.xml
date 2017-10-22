@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Court Counter</string>
+
+    <string name="counter_fragment">Counter</string>
+
+    <string name="stopwatch_fragment">Stopwatch</string>
+</resources>
