@@ -16,6 +16,9 @@ import android.widget.TextView;
  */
 public class CounterFragment extends Fragment {
 
+    private TextView mNameTeamA, mNameTeamB;
+    private String teamAName, teamBName;
+
     private int scoreTeamA = 0; // Tracks Score For Team A
     private int foulTeamA = 0; // Tracks Foul For Team A
 
@@ -33,6 +36,10 @@ public class CounterFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,6 +51,15 @@ public class CounterFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Bundle bundle = getArguments();
+        teamAName = bundle.getString("TeamA");
+        teamBName = bundle.getString("TeamB");
+
+        mNameTeamA = (TextView) view.findViewById(R.id.name_team_A);
+        mNameTeamB = (TextView) view.findViewById(R.id.name_team_B);
+        mNameTeamA.setText(teamAName);
+        mNameTeamB.setText(teamBName);
 
         mTeamAScoreView = (TextView) view.findViewById(R.id.team_A_Score);
         mTeamAFoulView = (TextView) view.findViewById(R.id.team_A_Foul);
@@ -149,6 +165,7 @@ public class CounterFragment extends Fragment {
 
     /**
      * This method displays the Score For Team A.
+     *
      * @param score is the score of team A.
      */
     private void displayScoreForTeamA(int score) {
@@ -157,6 +174,7 @@ public class CounterFragment extends Fragment {
 
     /**
      * This method displays the number of fouls of Team A.
+     *
      * @param foul is the number of fouls of team A.
      */
     private void displayFoulForTeamA(int foul) {
@@ -193,6 +211,7 @@ public class CounterFragment extends Fragment {
 
     /**
      * This method displays the Score For Team B.
+     *
      * @param score is the score of team B.
      */
     private void displayScoreForTeamB(int score) {
@@ -201,6 +220,7 @@ public class CounterFragment extends Fragment {
 
     /**
      * This method displays the number of fouls of Team B.
+     *
      * @param foul is the number of fouls of team B.
      */
     private void displayFoulForTeamB(int foul) {
@@ -221,5 +241,11 @@ public class CounterFragment extends Fragment {
         foulTeamB = 0;
         displayScoreForTeamB(0);
         displayFoulForTeamB(0);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        setRetainInstance(false);
     }
 }

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_counter"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -26,9 +28,10 @@
             android:background="#4d000000">
 
             <TextView
+                android:id="@+id/name_team_A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="L.A. LAKERS"
+                tools:text="L.A. LAKERS"
                 style="@style/headerStyles" />
 
             <View
@@ -144,9 +147,10 @@
             android:background="#4d000000">
 
             <TextView
+                android:id="@+id/name_team_B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="N.Y. KNICKS"
+                tools:text="N.Y. KNICKS"
                 style="@style/headerStyles"/>
 
             <View

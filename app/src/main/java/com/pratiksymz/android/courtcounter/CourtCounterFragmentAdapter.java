@@ -1,6 +1,7 @@
 package com.pratiksymz.android.courtcounter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -8,11 +9,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class CourtCounterFragmentAdapter extends FragmentPagerAdapter {
 
     private Context mContext;
+    private Bundle counterFragmentBundle;
 
-    //Public constructor for the ViewPager Adapter
-    public CourtCounterFragmentAdapter(FragmentManager fm, Context context) {
+    // Public constructor for the ViewPager Adapter
+    public CourtCounterFragmentAdapter(FragmentManager fm, Context context, Bundle bundle) {
         super(fm);
         mContext = context;
+        counterFragmentBundle = bundle;
     }
 
     @Override
@@ -20,7 +23,9 @@ public class CourtCounterFragmentAdapter extends FragmentPagerAdapter {
         // Set the Fragments as ViewPager items
         // And else is required!!
         if (position == 0) {
-            return new CounterFragment();
+            CounterFragment fragment = new CounterFragment();
+            fragment.setArguments(counterFragmentBundle);
+            return fragment;
         } else {
             return new StopwatchFragment();
         }
