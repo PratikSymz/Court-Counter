@@ -32,6 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="L.A. LAKERS"
+                android:textAllCaps="true"
                 style="@style/headerStyles" />
 
             <View
@@ -151,6 +152,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="N.Y. KNICKS"
+                android:textAllCaps="true"
                 style="@style/headerStyles"/>
 
             <View
@@ -256,7 +258,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="15dp"
         android:textAllCaps="true"
         android:text="reset"
         android:textStyle="bold"
